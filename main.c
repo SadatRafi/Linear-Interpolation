@@ -14,6 +14,10 @@ int main(void)
 																				 12.099f, 10.0f, 8.309f, 6.948f, 5.824f, 4.911f, 4.16f, 3.539f, 3.024f, 2.593f,
 																				 2.233f};
  
-	Train_Interpolation(&resistance[0], &temperture[0], 22, &ntcTempVsResCurve[0]);
-	test_variable = Return_Y_Value(53,&ntcTempVsResCurve[0],(TOTAL_DATA_POINTS -1)); 
+	Train_Interpolation(&resistance[0], &temperture[0], TOTAL_DATA_POINTS, &ntcTempVsResCurve[0]);
+	while(1)
+	{
+		test_variable = Return_Y_Value(53.0f,&ntcTempVsResCurve[0],(TOTAL_DATA_POINTS -1)); 
+	}
+	
 }
